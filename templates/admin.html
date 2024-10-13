@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>Admin Dashboard</h2>
+        <p>Welcome, {{ username }}</p>
+      </header>
+
+      <section>
+        <h3>All Users</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Personal Info</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in all_users %}
+            <tr>
+              <td>{{ user[1] }}</td>
+              <td>{{ user[3] }}</td>
+              <td>{{ user[4] }}</td>
+              <td>{{ user[5] }}</td>
+              <td>{{ user[6] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <footer>
+        <a class="logout-button" href="{{ url_for('logout') }}">Logout</a>
+      </footer>
+    </div>
+  </body>
+</html>

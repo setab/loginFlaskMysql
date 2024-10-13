@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>User Dashboard</title>
+  </head>
+  <body>
+    <div>
+      <h1>Welcome to the social media app;</h1>
+      {% for items in user %} {%for item in items%}
+      <li>{{item}}</li>
+      {%endfor%} {%endfor%}
+      <br />
+      <h3>
+        here you can create upload and download images and create accounts for
+        personal uses
+      </h3>
+    </div>
+  </body>
+</html>

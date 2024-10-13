@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>User Dashboard</title>
+    <style>
+      /* Container Styling */
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Form Styling */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      input[type="text"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      /* Footer Styling */
+      footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .logout-button {
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .logout-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Post Something</h2>
+      <form method="POST">
+        <label for="about">About</label>
+        <input type="text" id="about" name="about" required />
+
+        <label for="write">Write</label>
+        <input type="text" id="write" name="write" required />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <footer>
+        <a href="{{ url_for('user_page') }}" class="logout-button">User Info</a>
+      </footer>
+    </div>
+  </body>
+</html>
